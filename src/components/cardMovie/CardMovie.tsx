@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 // interface IData {
 //   adult?: boolean;
@@ -17,9 +18,18 @@ import React from "react";
 //   vote_count?: number;
 // }
 const CardMovie: React.FC<any> = (data) => {
+  const navigate = useNavigate();
   const { data: movie } = data;
+
+  const handleClick = () => {
+    navigate(`/detail/${movie.id}`);
+  };
+
   return (
-    <div className="wrapper group relative cursor-pointer rounded-lg">
+    <div
+      className="wrapper group relative cursor-pointer rounded-lg"
+      onClick={handleClick}
+    >
       <div className="poster relative h-0 pt-2/3 pb-2/3">
         <img
           src={`https://image.tmdb.org/t/p/original${movie.backdrop_path}`}

@@ -12,7 +12,7 @@ const SearchResult = () => {
       <h2 className="text-2xl font-semibold text-slate-700">
         Search Result :{" "}
       </h2>
-      <div className="wrapper mt-5 grid grid-flow-row grid-cols-4 gap-4 ">
+      <div className="wrapper mt-5 grid grid-flow-row grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-4 ">
         {isLoading
           ? null
           : data?.results.map((item) => {
