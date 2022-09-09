@@ -86,7 +86,7 @@ export const movieApi = createApi({
       query: () =>
         `movie/popular?api_key=3c3f04416749ac246eab0bd32804ed99&language=en-US&page=1`,
     }),
-    getDetails: builder.query<IDetails, undefined>({
+    getDetails: builder.query<IDetails, number>({
       query: (id) =>
         `movie/${id}?api_key=3c3f04416749ac246eab0bd32804ed99&language=en-US`,
     }),
